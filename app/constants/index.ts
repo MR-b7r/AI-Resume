@@ -245,3 +245,17 @@ export const prepareInstructions = ({
       ${AIResponseFormat}
       Return the analysis as an JSON object, without any other text and without the backticks.
       Do not include any other text or comments.`;
+
+export const formElements: Uploadform[] = [
+  {
+    label: "Company Name",
+    name: "company-name",
+    camelCase: "companyName",
+  },
+  { label: "Job Title", name: "job-title", camelCase: "jobTitle" },
+  {
+    label: "Job Description",
+    name: "job-description",
+    camelCase: "jobDescription",
+  },
+];

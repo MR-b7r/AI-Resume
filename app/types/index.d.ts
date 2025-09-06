@@ -48,3 +48,9 @@ interface Feedback {
     }[];
   };
 }
+
+interface Uploadform {
+  label: string;
+  name: string;
+  camelCase: string;
+}
