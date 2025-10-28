@@ -1,5 +1,5 @@
 import React, { useState, type FormEvent } from "react";
-import { redirect } from "react-router";
+import { redirect, useNavigate } from "react-router";
 import FileUploader from "~/components/FileUploader";
 import Navbar from "~/components/Navbar";
 import { formElements, prepareInstructions } from "~/constants";
@@ -13,7 +13,7 @@ const upload = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [statusText, setStatusText] = useState("");
   const [file, setFile] = useState<File | null>(null);
-
+  const navigate = useNavigate();
   const handleFileSelect = (file: File | null) => {
     setFile(file);
   };
@@ -73,7 +73,7 @@ const upload = () => {
 
     setStatusText("Analysis complete, redirecting...");
     console.log(data);
-    redirect(`/resume/${uuid}`);
+    navigate(`/resume/${uuid}`);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
